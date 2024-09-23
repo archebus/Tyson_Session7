@@ -17,10 +17,7 @@ class Program {
         }
 
         map.Generate();
-        Console.WriteLine(map.Start.Name);
         Room current = map.Start;
-
-
 
         while (!exit) {
             Console.Clear();
@@ -59,7 +56,7 @@ public class Room {
     }
 
     public void Draw() {
-        // If the direction is not null, print the respective direction, otherwise print empty space
+        // If the direction is not null, print the respective direction.
         string northLabel = north != null ? "N" : "-";
         string southLabel = south != null ? "S" : "-";
         string eastLabel = east != null ? "E" : "|";
@@ -108,6 +105,7 @@ public class Level {
             return current;
         } else {
             Console.WriteLine("You cannot move that way!");
+            Console.ReadLine();
             return origin;
         }
     }
